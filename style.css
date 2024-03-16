@@ -1,0 +1,127 @@
+:root {
+  /* Primary */
+  --green: hsl(75, 94%, 57%);
+
+  /* Neutral */
+  --white: hsl(0, 0%, 100%);
+  --grey: hsl(0, 0%, 20%);
+  --dark-grey: hsl(0, 0%, 12%);
+  --off-black: hsl(0, 0%, 8%);
+  /* font-weight */
+  --f_wgt_4: 400;
+  --f_wgt_6: 600;
+  --f_wgt_7: 700;
+}
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter";
+}
+
+/* Set base font size to 10px (62.5% of 16px) for easy rem calculations */
+html {
+  font-size: 62.5%;
+}
+
+/* Ensure body takes at least the full viewport height */
+body {
+  justify-content: flex-start !important;
+  min-height: 100dvh;
+  background-color: var(--off-black);
+}
+
+/* @font-face rule for custom fonts */
+@font-face {
+  font-family: "Inter";
+  src: url("Inter/static/Inter-Regular.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("Inter/static/Inter-SemiBold.ttf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("Inter/static/Inter-Bold.ttf");
+  font-weight: 700;
+}
+main {
+  width: clamp(32.5rem, 27%, 38.5rem);
+  margin-block: 17.5rem 0;
+  padding: 2.15rem 4.05rem;
+  text-align: center;
+  background-color: var(--dark-grey);
+  border-radius: 1.25rem;
+}
+
+header h1 {
+  color: var(--white);
+  font-size: 2.35rem;
+}
+
+header p:nth-child(2) {
+  margin-block: 1rem 3rem;
+  font-weight: var(--f_wgt_7);
+  color: var(--green);
+  font-size: 1.35rem;
+}
+header p:nth-child(3) {
+  font-weight: var(--f_wgt_4);
+  color: var(--white);
+  font-size: 1.375rem;
+}
+
+.social-links {
+  margin-top: 2.5rem;
+  gap: 1.6rem;
+}
+
+.social-links > button {
+  width: 100%;
+  font-weight: var(--f_wgt_7);
+  font-size: 1.35rem;
+  background-color: var(--grey);
+  color: var(--white);
+  padding: 1.5rem 0;
+  border-radius: 1rem;
+  border: none;
+  cursor: pointer;
+}
+
+.social-links > button:hover {
+  background-color: var(--green);
+  color: var(--dark-grey);
+}
+/* Global Classe  */
+
+img {
+  max-width: 9rem;
+  clip-path: circle(50%);
+  margin-block: 2rem 2.5rem;
+}
+
+.flex_x_y_center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (width < 500px) {
+  main {
+    margin-block: 11.6rem 0;
+    padding: 2.15rem 2rem;
+  }
+  img {
+    margin-block: 0rem 3rem;
+  }
+}
+
+@media (width < 320px) {
+  main {
+    width: 90%;
+  }
+}
